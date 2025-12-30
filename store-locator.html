@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a Store - Gloriva Lighting</title>
+    <meta
+      name="description"
+      content="Locate your nearest Gloriva Lighting showroom. Experience our premium lighting collections in person at exclusive locations."
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+      :root {
+        --primary: #4a6fdc;
+        --secondary: #d4af37;
+        --secondary-light: #e8c567;
+        --dark: #0f0f0f;
+        --light: #fafafa;
+        --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.18);
+        --radius: 24px;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        padding-top: 170px;
+        transition: var(--transition);
+      }
+
+      /* Hero Header */
+      .store-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1513699533697-2b2d6c21b7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 200px 0 140px;
+        text-align: center;
+      }
+
+      .store-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .store-hero .lead {
+        font-size: 1.6rem;
+        max-width: 900px;
+        margin: 30px auto 0;
+        opacity: 0.95;
+      }
+
+      /* Search Card */
+      .search-card {
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        padding: 60px;
+        margin: -120px auto 100px;
+        max-width: 900px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .search-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        margin-bottom: 40px;
+      }
+
+      .search-input {
+        height: 70px;
+        border-radius: 50px;
+        padding-left: 70px;
+        font-size: 1.2rem;
+        border: 2px solid #e0e0e0;
+      }
+
+      .search-input:focus {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.2);
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 26px;
+        color: var(--secondary);
+        z-index: 3;
+      }
+
+      .search-btn {
+        height: 70px;
+        border-radius: 50px;
+        padding: 0 60px;
+        font-size: 1.3rem;
+        background: var(--secondary);
+        border: none;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .search-btn:hover {
+        background: var(--secondary-light);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+      }
+
+      .location-btn {
+        height: 70px;
+        border-radius: 50px;
+        font-size: 1.2rem;
+      }
+
+      /* Store Cards */
+      .store-card {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        height: 100%;
+      }
+
+      .store-card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.22);
+      }
+
+      .store-img {
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+
+      .store-card:hover .store-img {
+        transform: scale(1.1);
+      }
+
+      .store-body {
+        padding: 40px;
+      }
+
+      .store-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+
+      .store-detail {
+        margin-bottom: 20px;
+        color: var(--gray);
+        font-size: 1.1rem;
+      }
+
+      .store-detail i {
+        color: var(--secondary);
+        width: 24px;
+      }
+
+      .directions-btn {
+        background: var(--secondary);
+        color: #212529;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      .directions-btn:hover {
+        background: var(--secondary-light);
+        transform: translateY(-4px);
+      }
+
+      /* Map */
+      .map-container {
+        height: 600px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .map-placeholder {
+        height: 100%;
+        background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+          linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+          linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-size: 1.8rem;
+      }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background: var(--dark);
+        color: #f0f0f0;
+      }
+
+      body.dark-mode .search-card,
+      body.dark-mode .store-card {
+        background: #1a1a1a;
+      }
+
+      body.dark-mode .store-detail {
+        color: #ccc;
+      }
+
+      @media (max-width: 992px) {
+        body {
+          padding-top: 120px;
+        }
+        .store-hero h1 {
+          font-size: 4rem;
+        }
+        .search-card {
+          padding: 50px 40px;
+          margin: -80px auto 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .store-hero h1 {
+          font-size: 3.5rem;
+        }
+        .store-hero .lead {
+          font-size: 1.4rem;
+        }
+        .search-card {
+          padding: 40px 30px;
+        }
+        .store-body {
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar py-3 d-none d-lg-block border-bottom bg-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-start">
+            <span class="me-4"
+              ><i class="fas fa-phone-alt me-2"></i>(123) 456-7890</span
+            >
+            <span
+              ><i class="fas fa-envelope me-2"></i
+              >info@glorivalighting.com</span
+            >
+          </div>
+          <div class="col-md-6 text-end">
+            <a
+              href="track-order.html"
+              class="me-3 text-decoration-none text-muted"
+            >
+              <i class="fas fa-truck me-1"></i>Track Order
+            </a>
+            <a
+              href="store-locator.html"
+              class="me-3 text-decoration-none text-muted"
+            >
+              <i class="fas fa-map-marker-alt me-1"></i>Find Store
+            </a>
+            <a
+              href=""
+              id="dark-mode-toggle"
+              class="text-decoration-none text-muted"
+            >
+              <i class="fas fa-moon me-1"></i>Dark Mode
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <!-- <img
+            src="Gloriva Lighting.png"
+            alt="Gloriva Lighting"
+            width="40"
+            class="mr-2"
+          /> -->
+          Gloriva Lighting
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Your nav items -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="store-hero">
+      <div class="container">
+        <h1>Find a Showroom</h1>
+        <p class="lead">
+          Discover Gloriva Lighting in person at our exclusive galleries across
+          India
+        </p>
+      </div>
+    </header>
+
+    <!-- Search Form -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="search-card" data-aos="fade-up">
+          <h2 class="text-center">Locate Nearest Gallery</h2>
+          <form class="row g-4 align-items-end mt-4">
+            <div class="col-lg-8 position-relative">
+              <i class="fas fa-search search-icon"></i>
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Enter city, state or PIN code (e.g. Mumbai, 400001)"
+              />
+            </div>
+            <div class="col-lg-4">
+              <button type="submit" class="btn search-btn w-100">
+                <i class="fas fa-search me-2"></i>Search Stores
+              </button>
+            </div>
+            <div class="col-12 text-center">
+              <small class="text-muted">Or detect automatically</small><br />
+              <button
+                type="button"
+                class="btn btn-outline-secondary location-btn mt-3"
+              >
+                <i class="fas fa-location-crosshairs me-2"></i>Use My Location
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Results -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Store List -->
+          <div class="col-lg-6">
+            <h3 class="mb-5 fw-bold" data-aos="fade-up">Exclusive Showrooms</h3>
+
+            <div class="row g-4">
+              <!-- Store 1 -->
+              <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="store-card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1558618663-fcd25b3ac6be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                    class="store-img w-100"
+                    alt="Mumbai Showroom"
+                  />
+                  <div class="store-body">
+                    <h4 class="store-title">Mumbai Flagship Gallery</h4>
+                    <div class="store-detail">
+                      <i class="fas fa-map-marker-alt"></i>
+                      45, Luxury Lane, Bandra West<br />Mumbai, Maharashtra
+                      400050
+                    </div>
+                    <div class="store-detail">
+                      <i class="fas fa-clock"></i>
+                      Mon–Sat: 10:00 AM – 8:00 PM<br />Sunday: 11:00 AM – 7:00
+                      PM
+                    </div>
+                    <div class="store-detail">
+                      <i class="fas fa-phone"></i>
+                      <a href="tel:+91224567890">+91 22 456 7890</a>
+                    </div>
+                    <a href="#" class="directions-btn btn mt-3">
+                      <i class="fas fa-directions me-2"></i>Get Directions
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Store 2 -->
+              <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="store-card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1513699533697-2b2d6c21b7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                    class="store-img w-100"
+                    alt="Delhi Showroom"
+                  />
+                  <div class="store-body">
+                    <h4 class="store-title">New Delhi Boutique</h4>
+                    <div class="store-detail">
+                      <i class="fas fa-map-marker-alt"></i>
+                      DLF Emporio, Vasant Kunj II<br />New Delhi, Delhi 110070
+                    </div>
+                    <div class="store-detail">
+                      <i class="fas fa-clock"></i>
+                      Daily: 11:00 AM – 9:00 PM
+                    </div>
+                    <div class="store-detail">
+                      <i class="fas fa-phone"></i>
+                      <a href="tel:+91114567890">+91 11 456 7890</a>
+                    </div>
+                    <a href="#" class="directions-btn btn mt-3">
+                      <i class="fas fa-directions me-2"></i>Get Directions
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="mb-5 fw-bold">Interactive Map</h3>
+            <div class="map-container">
+              <div class="map-placeholder">
+                <div class="text-center">
+                  <i class="fas fa-map-marked-alt fa-5x mb-4 text-muted"></i>
+                  <p>
+                    Google Maps Integration<br />Multiple Custom Gold Markers
+                  </p>
+                  <small class="text-muted"
+                    >Click any marker for showroom details</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+      <footer class="bg-dark text-light py-5">
+        <div class="container">
+          <div class="row g-5">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+              <img
+                src="img/Gloriva Lighting.png"
+                alt="Gloriva Lighting Logo"
+                width="140"
+                class="mb-4"
+              />
+              <p class="mb-4">
+                Illuminating spaces with elegance and innovation since 2010.
+                Premium lighting solutions for every home and business.
+              </p>
+              <div class="social-icons d-flex gap-3">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-pinterest-p"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Shop</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="indoor-lighting.html">Indoor Lighting</a></li>
+                <li><a href="outdoor-lighting.html">Outdoor Lighting</a></li>
+                <li><a href="smart-lighting.html">Smart Lighting</a></li>
+                <li>
+                  <a href="Commercial-Solutions.html">Commercial Solutions</a>
+                </li>
+                <li><a href="newarrivial.html">New Arrivals</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Customer Service</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter & Payment -->
+            <div class="col-lg-3 col-md-6">
+              <h5 class="fw-bold mb-4 text-warning">Stay Connected</h5>
+              <p class="mb-3">
+                Subscribe for exclusive offers and new arrivals
+              </p>
+              <form class="d-flex mb-4">
+                <input
+                  type="email"
+                  class="form-control me-2"
+                  placeholder="Your email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-warning" type="submit">Subscribe</button>
+              </form>
+              <div>
+                <p class="mb-2 small opacity-75">We accept:</p>
+                <div class="payment-icons d-flex gap-3">
+                  <i class="fab fa-cc-visa fa-2x"></i>
+                  <i class="fab fa-cc-mastercard fa-2x"></i>
+                  <i class="fab fa-cc-amex fa-2x"></i>
+                  <i class="fab fa-cc-paypal fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="my-5 border-secondary opacity-25" />
+
+          <!-- Copyright -->
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0 small">
+                &copy; 2025 Gloriva Lighting. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-bottom-links small">
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Privacy Policy</a
+                >
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Terms of Service</a
+                >
+                <a href="#" class="text-light opacity-75">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1200, once: true });
+
+      // Dark Mode
+      document
+        .getElementById("dark-mode-toggle")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.body.classList.toggle("dark-mode");
+          const icon = this.querySelector("i");
+          icon.classList.toggle("fa-moon");
+          icon.classList.toggle("fa-sun");
+        });
+    </script>
+  </body>
+</html>

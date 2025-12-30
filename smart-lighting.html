@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Lighting - Gloriva Lighting</title>
+    <meta
+      name="description"
+      content="Explore Gloriva Lighting's innovative smart lighting solutions. Discover smart bulbs, switches, sensors, and integrated systems for your modern home."
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Top Bar with Info -->
+    <div
+      class="top-bar d-none d-lg-block"
+      style="background: #f5f5f5; padding: 10px 0"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="top-info">
+              <span><i class="fas fa-phone-alt"></i> (123) 456-7890</span>
+              <span
+                ><i class="fas fa-envelope"></i> info@glorivalighting.com</span
+              >
+            </div>
+          </div>
+          <div class="col-md-6 text-right">
+            <div class="top-links">
+              <a href="#"><i class="fas fa-truck"></i> Track Order</a>
+              <a href="#"><i class="fas fa-map-marker-alt"></i> Find Store</a>
+              <a href="#" id="dark-mode-toggle"
+                ><i class="fas fa-moon"></i> Dark Mode</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+           <!-- <img
+            src="Gloriva Lighting.png"
+            alt="Gloriva Lighting"
+            width="40"
+            class="mr-2"
+          /> -->
+          Gloriva Lighting
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto text-uppercase">
+            <li class="nav-item dropdown mx-3">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Products</a
+              >
+              <ul class="dropdown-menu shadow-lg border-0 rounded-3">
+                <li>
+                  <a
+                    class="dropdown-item py-2 active"
+                    href="indoor-lighting.html"
+                    >Indoor Lighting</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item py-2" href="outdoor-lighting.html"
+                    >Outdoor Lighting</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item py-2" href="smart-lighting.html"
+                    >Smart Lighting</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item py-2" href="Commercial-Solutions.html"
+                    >Commercial Solutions</a
+                  >
+                </li>
+                <hr class="dropdown-divider my-2" />
+                <li>
+                  <a class="dropdown-item py-2 fw-bold" href="newarrivial.html"
+                    >New Arrivals</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="index.html#categories">Categories</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+          <div class="navbar-icons d-flex align-items-center gap-3">
+            <a href="#" class="icon-btn search-toggle" aria-label="Search"
+              ><i class="fas fa-search"></i
+            ></a>
+            <a href="account.html" class="icon-btn" aria-label="Account"
+              ><i class="fas fa-user"></i
+            ></a>
+            <a
+              href="wishlist.html"
+              class="icon-btn position-relative"
+              aria-label="Wishlist"
+            >
+              <i class="fas fa-heart"></i>
+              <span class="badge">0</span>
+            </a>
+            <a
+              href="cart.html"
+              class="icon-btn position-relative"
+              aria-label="Cart"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div
+      class="search-overlay"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999;
+      "
+    >
+      <div
+        class="search-content"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80%;
+          max-width: 500px;
+        "
+      >
+        <form class="search-form d-flex">
+          <input
+            type="text"
+            placeholder="Search for products..."
+            class="form-control"
+          />
+          <button type="submit" class="btn btn-warning">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <div
+          class="search-close"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            cursor: pointer;
+          "
+        >
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Smart Lighting</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Smart Lighting
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="sub-categories py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5 fw-bold">Explore Smart Collections</h2>
+          <p class="lead text-muted">
+            Control your lighting with voice, app, or automation
+          </p>
+        </div>
+        <div class="row g-4 g-lg-5 justify-content-center">
+          <!-- Smart Bulbs -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in">
+            <a href="#smart-bulbs" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0769/1799/7895/files/luxury-design-led-lights_480x480.jpg?v=1693806155"
+                  class="card-img"
+                  alt="Luxury smart bulbs creating cozy modern living room ambiance"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">Smart Bulbs</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Smart Switches -->
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <a href="#smart-switches" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://cdn.thewirecutter.com/wp-content/media/2023/03/in-wall-smart-dimmer-2048px-8946.jpg?auto=webp&quality=75&width=1024"
+                  class="card-img"
+                  alt="Modern in-wall smart light switch in contemporary home"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">Smart Switches</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Smart Sensors -->
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <a href="#smart-sensors" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://www.androidauthority.com/wp-content/uploads/2023/12/philips-hue-motion-sensor-scaled.jpg"
+                  class="card-img"
+                  alt="Smart motion sensor activating hallway lights"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">Smart Sensors</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- LED Strips -->
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <a href="#led-strips" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://www.popsci.com/wp-content/uploads/2021/05/03/LED-Strip-Lights.jpeg?quality=85&w=2000"
+                  class="card-img"
+                  alt="RGB LED strip lights in modern bedroom setup"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">LED Strips</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Smart Hubs -->
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <a href="#smart-hubs" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://media.wired.com/photos/65d799e036b078fc6a295aa9/master/w_2560%2Cc_limit/Amazon-Echo-Hub-Featured-Gear.jpg"
+                  class="card-img"
+                  alt="Amazon Echo Hub smart home device in living room"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">Smart Hubs</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Outdoor Smart -->
+          <div
+            class="col-6 col-md-4 col-lg-2"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <a href="#outdoor-smart" class="text-decoration-none">
+              <div class="sub-category-card">
+                <img
+                  src="https://cdn.mos.cms.futurecdn.net/XWCnUxCfZTpyt7kGHvyiEM.jpg"
+                  class="card-img"
+                  alt="Smart outdoor lighting illuminating garden path at night"
+                />
+                <div class="sub-overlay">
+                  <h5 class="sub-title">Outdoor Smart</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </img>
+      </div>
+    </section>
+
+    <!-- Featured Products Banner -->
+    <section class="featured-banners py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold">Featured Smart Collections</h2>
+            <p class="lead text-muted">Experience the future of lighting control</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+            <!-- Voice-Controlled Lighting -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                <a href="#voice-control" class="text-decoration-none">
+                    <div class="banner-card">
+                        <img src="https://www.cepro.com/wp-content/uploads/2025/07/SmartLighting-HomeTheater.jpg" 
+                             class="card-img" alt="Luxury smart home with voice-controlled lighting and home theater">
+                        <div class="banner-overlay">
+                            <h3>Voice-Controlled Lighting</h3>
+                            <p>Hands-free control with Alexa, Google, or Siri</p>
+                            <span class="btn btn-warning">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- App-Controlled Systems -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="#smart-hubs" class="text-decoration-none">
+                    <div class="banner-card">
+                        <img src="https://tekmaxtechnologies.com/wp-content/uploads/2024/06/Smart-Lighting-1024x683.png" 
+                             class="card-img" alt="Modern smart home lighting controlled by smartphone app with RGB colors">
+                        <div class="banner-overlay">
+                            <h3>App-Controlled Systems</h3>
+                            <p>Full customization from your phone anywhere</p>
+                            <span class="btn btn-warning">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- LED Strips -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <a href="#led-strips" class="text-decoration-none">
+                    <div class="banner-card">
+                        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/f79cf25a-50e7-4bf9-8e9f-c64f2f7fee8a.__CR0,0,970,600_PT0_SX970_V1___.jpg" 
+                             class="card-img" alt="Color-changing LED strips in luxury kitchen under cabinet lighting">
+                        <div class="banner-overlay">
+                            <h3>RGB LED Strips</h3>
+                            <p>Create dynamic ambiance with millions of colors</p>
+                            <span class="btn btn-warning">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Outdoor Smart -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <a href="#outdoor-smart" class="text-decoration-none">
+                    <div class="banner-card">
+                        <img src="https://havenlighting.com/cdn/shop/files/Smart-Full-Color-Lighting_mobilebn-min_1600x.jpg?v=1709068196" 
+                             class="card-img" alt="Smart outdoor lighting on luxury patio controlled by app">
+                        <div class="banner-overlay">
+                            <h3>Outdoor Smart Lighting</h3>
+                            <p>Weatherproof control for gardens and patios</p>
+                            <span class="btn btn-warning">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Smart Bulbs Section - Enhanced Premium Version -->
+<section id="smart-bulbs" class="product-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold">Smart Bulbs</h2>
+            <p class="lead text-muted">Wi-Fi & Bluetooth-enabled bulbs with millions of colors, dimming, and voice control</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+            <!-- Product 1 - Color Changing -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://cdn.shopify.com/s/files/1/0769/1799/7895/files/luxury-design-led-lights_480x480.jpg?v=1693806155" 
+                         class="card-img" alt="Premium RGB color-changing smart bulb in luxury living room">
+                    <div class="product-overlay">
+                        <h5 class="product-title">RGB Color Changing Bulb</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="ms-2 text-light small">(5.0)</span>
+                        </div>
+                        <p class="price fw-bold">₹2,999</p>
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3">New</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - Dimmable -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.androidauthority.com/wp-content/uploads/2023/12/philips-hue-white-ambiance-bulb-stock-photo-4.jpg" 
+                         class="card-img" alt="Dimmable smart LED bulb creating cozy bedroom ambiance">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Dimmable Warm White Bulb</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.7)</span>
+                        </div>
+                        <p class="price fw-bold">₹1,899</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - Voice-Compatible -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.cepro.com/wp-content/uploads/2025/07/SmartLighting-HomeTheater.jpg" 
+                         class="card-img" alt="Voice-controlled smart bulb integrated with Alexa in modern home">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Voice-Compatible Bulb</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.5)</span>
+                        </div>
+                        <p class="price fw-bold">₹2,499</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 - Tunable White -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://tekmaxtechnologies.com/wp-content/uploads/2024/06/Smart-Lighting-1024x683.png" 
+                         class="card-img" alt="Tunable white smart bulb in home office setup">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Tunable White Bulb</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.3)</span>
+                        </div>
+                        <p class="price fw-bold">₹1,699</p>
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-3">Sale</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Product 5 -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.popsci.com/wp-content/uploads/2021/05/03/LED-Strip-Lights.jpeg?quality=85&w=2000" 
+                         class="card-img" alt="Multi-color smart bulb pack in vibrant living room">
+                    <div class="product-overlay">
+                        <h5 class="product-title">RGB+W Bulb Pack (4)</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.8)</span>
+                        </div>
+                        <p class="price fw-bold">₹9,999</p>
+                        <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">Best Seller</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Product 6 -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="500">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://havenlighting.com/cdn/shop/files/Smart-Full-Color-Lighting_mobilebn-min_1600x.jpg?v=1709068196" 
+                         class="card-img" alt="Smart bulb with app control in modern bedroom">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Premium App-Controlled Bulb</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="ms-2 text-light small">(4.9)</span>
+                        </div>
+                        <p class="price fw-bold">₹3,499</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="smart-bulbs.html" class="btn btn-outline-warning btn-lg px-5">View All Smart Bulbs</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Smart Switches Section -->
+<section id="smart-switches" class="product-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold">Smart Switches</h2>
+            <p class="lead text-muted">Control lighting with apps, voice commands, dimming, and automated schedules</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+            <!-- Product 1 - Touch Panel -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://m.media-amazon.com/images/I/41t2H85UuWL._AC_UF894,1000_QL80_.jpg" 
+                         class="card-img" alt="Luxury glass touch panel smart switch in modern wall">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Glass Touch Panel Switch</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.6)</span>
+                        </div>
+                        <p class="price fw-bold">₹3,899</p>
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3">New</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - Dimmer -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/00cbad2b-1d3e-4313-8167-b31b97c7fcf8.__CR0,0,970,600_PT0_SX970_V1___.jpg" 
+                         class="card-img" alt="Elegant smart dimmer switch in luxury living room">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Smart Dimmer Switch</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.4)</span>
+                        </div>
+                        <p class="price fw-bold">₹4,299</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - Motion-Activated -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/f3ce79a6-a337-4ee1-a82d-0c02a9b952c9.__CR0,0,600,450_PT0_SX600_V1___.jpg" 
+                         class="card-img" alt="Motion sensor smart switch in luxury hallway">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Motion-Activated Switch</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.7)</span>
+                        </div>
+                        <p class="price fw-bold">₹3,499</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 - Remote Control -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.roombanker.com/wp-content/uploads/2023/12/switch-remote-control.jpg" 
+                         class="card-img" alt="Remote app-controlled smart switch in modern interior">
+                    <div class="product-overlay">
+                        <h5 class="product-title">App Remote Switch</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.3)</span>
+                        </div>
+                        <p class="price fw-bold">₹2,999</p>
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-3">Sale</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="smart-switches.html" class="btn btn-outline-warning btn-lg px-5">View All Smart Switches</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Smart Sensors Section -->
+<section id="smart-sensors" class="product-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold">Smart Sensors</h2>
+            <p class="lead text-muted">Motion, ambient light, and presence sensors that automate your lighting for convenience and energy savings</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+            <!-- Product 1 - Motion Detector -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://m.media-amazon.com/images/I/A1kL2VpFO2L.jpg" 
+                         class="card-img" alt="Premium motion sensor activating lights in luxury modern hallway at dusk">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Advanced Motion Detector</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.4)</span>
+                        </div>
+                        <p class="price fw-bold">₹2,299</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - Ambient Light Sensor -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.finitesolutions.co.uk/wp-content/uploads/2021/01/415-pro-HD_3054.jpg" 
+                         class="card-img" alt="Luxury smart home interior with ambient light sensor integration">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Ambient Light Sensor</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.7)</span>
+                        </div>
+                        <p class="price fw-bold">₹1,899</p>
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3">New</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - Presence Detector -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://thumbs.dreamstime.com/b/smart-motion-sensor-enhancing-living-room-ambiance-modern-design-mounted-stylish-filled-plants-soft-lighting-357817788.jpg" 
+                         class="card-img" alt="Elegant presence detector in luxury living room with plants and soft lighting">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Precision Presence Detector</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="ms-2 text-light small">(4.9)</span>
+                        </div>
+                        <p class="price fw-bold">₹3,299</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 - Door/Window Sensor -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://images.vivintcdn.com/global/Blog%202022/smart-home-hub.jpg" 
+                         class="card-img" alt="Luxury smart home hub with door/window sensors for automated lighting">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Door/Window Sensor</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span class="ms-2 text-light small">(4.2)</span>
+                        </div>
+                        <p class="price fw-bold">₹1,599</p>
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-3">Sale</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Product 5 - Occupancy Sensor -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://cdn.thewirecutter.com/wp-content/media/2025/08/BEST-SMART-HOME-SENSORS-2048px-4320.jpg" 
+                         class="card-img" alt="High-end smart occupancy sensor in modern luxury home office">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Occupancy Sensor Pro</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2 text-light small">(4.8)</span>
+                        </div>
+                        <p class="price fw-bold">₹3,999</p>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Product 6 - Multi-Sensor Hub -->
+            <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="500">
+                <div class="product-card overflow-hidden rounded shadow-lg">
+                    <img src="https://www.mrbrightlighting.com/wp-content/uploads/2025/06/How-smart-lighting-in-Malaysia-works-for-homes.jpg" 
+                         class="card-img" alt="Luxury multi-sensor hub installation in high-end smart home">
+                    <div class="product-overlay">
+                        <h5 class="product-title">Multi-Sensor Hub</h5>
+                        <div class="ratings mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="ms-2 text-light small">(4.9)</span>
+                        </div>
+                        <p class="price fw-bold">₹5,499</p>
+                        <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">Best Seller</span>
+                        <button class="btn btn-warning btn-sm px-4">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="smart-sensors.html" class="btn btn-outline-warning btn-lg px-5">View All Smart Sensors</a>
+        </div>
+    </div>
+</section>
+
+    <!-- LED Strips Section -->
+    <section id="led-strips" class="product-section bg-light">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Smart LED Strips</h2>
+          <p class="section-subtitle">
+            Flexible, color-changing LED strips for creative accent lighting
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-lg-3" data-aos="fade-up">
+            <div class="product-item">
+              <div class="sale-badge">New</div>
+              <img src="led-strip1.jpg" alt="RGB Smart LED Strip" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">RGB Smart LED Strip</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹4,499</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="product-item">
+              <img src="led-strip2.jpg" alt="Music Sync LED Strip" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Music Sync LED Strip</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <p class="price-tag">₹5,799</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="product-item">
+              <img src="led-strip3.jpg" alt="Waterproof LED Strip" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Waterproof LED Strip</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <p class="price-tag">₹6,299</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="product-item">
+              <div class="sale-badge">Sale</div>
+              <img src="led-strip4.jpg" alt="RGBW LED Strip Kit" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">RGBW LED Strip Kit</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹5,999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="led-strips.html" class="btn btn-outline-primary"
+            >View All LED Strips</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Hubs & Controllers Section -->
+    <section id="smart-hubs" class="product-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Smart Hubs & Controllers</h2>
+          <p class="section-subtitle">
+            Central control systems for managing your entire smart lighting
+            ecosystem
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-lg-3" data-aos="fade-up">
+            <div class="product-item">
+              <div class="sale-badge">New</div>
+              <img src="smart-hub1.jpg" alt="Smart Lighting Bridge" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Smart Lighting Bridge</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+                <p class="price-tag">₹7,999</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="product-item">
+              <img src="smart-hub2.jpg" alt="Wireless Remote Controller" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Wireless Remote Controller</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹3,499</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="product-item">
+              <img src="smart-hub3.jpg" alt="Voice Assistant Compatible Hub" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Voice Assistant Compatible Hub</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <p class="price-tag">₹8,499</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="product-item">
+              <div class="sale-badge">Sale</div>
+              <img src="smart-hub4.jpg" alt="Smart Home Control Center" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Smart Home Control Center</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹9,999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="smart-hubs.html" class="btn btn-outline-primary"
+            >View All Smart Hubs</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Outdoor Smart Lighting Section -->
+    <section id="outdoor-smart" class="product-section bg-light">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Outdoor Smart Lighting</h2>
+          <p class="section-subtitle">
+            Weather-resistant smart lighting solutions for gardens, pathways,
+            and outdoor spaces
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-lg-3" data-aos="fade-up">
+            <div class="product-item">
+              <div class="sale-badge">New</div>
+              <img src="outdoor-smart1.jpg" alt="Smart Pathway Lights" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Smart Pathway Lights</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <p class="price-tag">₹6,499</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="product-item">
+              <img src="outdoor-smart2.jpg" alt="Smart Floodlight" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Smart Floodlight</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹7,899</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="product-item">
+              <img src="outdoor-smart3.jpg" alt="Garden Spotlights" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Garden Spotlights</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <p class="price-tag">₹5,299</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="product-item">
+              <div class="sale-badge">Sale</div>
+              <img src="outdoor-smart4.jpg" alt="Porch Smart Light" />
+              <div class="quick-view"><i class="fas fa-eye"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Porch Smart Light</h5>
+                <div class="ratings">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="price-tag">₹4,999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="outdoor-smart.html" class="btn btn-outline-primary"
+            >View All Outdoor Smart Lighting</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Lighting Solutions Banner -->
+    <section class="solutions-banner" data-aos="fade-up">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="smart-home-ecosystem.jpg"
+              alt="Smart Home Ecosystem"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-text">
+              <h2>Complete Smart Lighting Solutions</h2>
+              <p>
+                Transform your home with our comprehensive smart lighting
+                ecosystem. Integrate smart bulbs, switches, sensors, and
+                controls for a fully automated lighting experience.
+              </p>
+              <ul class="check-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> Compatible with major
+                  smart home platforms
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Voice control with popular
+                  assistants
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Scheduled lighting
+                  routines
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Energy usage monitoring
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Remote control from
+                  anywhere
+                </li>
+              </ul>
+              <a href="#" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Home Integration Section -->
+    <section class="integration-section bg-light">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Works With Your Smart Home</h2>
+          <p class="section-subtitle">
+            Our smart lighting products integrate seamlessly with popular smart
+            home platforms
+          </p>
+        </div>
+
+        <div class="row partners-row justify-content-center" data-aos="fade-up">
+          <div class="col-4 col-md-2 partner-logo">
+            <img
+              src="platform-alexa.png"
+              alt="Amazon Alexa"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-4 col-md-2 partner-logo">
+            <img
+              src="platform-google.png"
+              alt="Google Home"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-4 col-md-2 partner-logo">
+            <img
+              src="platform-homekit.png"
+              alt="Apple HomeKit"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-4 col-md-2 partner-logo">
+            <img
+              src="platform-smartthings.png"
+              alt="Samsung SmartThings"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-4 col-md-2 partner-logo">
+            <img src="platform-ifttt.png" alt="IFTTT" class="img-fluid" />
+          </div>
+          <div class="col-4 col-md-2 partner-logo">
+            <img src="platform-matter.png" alt="Matter" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+      <footer class="bg-dark text-light py-5">
+        <div class="container">
+          <div class="row g-5">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+              <img
+                src="img/Gloriva Lighting.png"
+                alt="Gloriva Lighting Logo"
+                width="140"
+                class="mb-4"
+              />
+              <p class="mb-4">
+                Illuminating spaces with elegance and innovation since 2010.
+                Premium lighting solutions for every home and business.
+              </p>
+              <div class="social-icons d-flex gap-3">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-pinterest-p"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Shop</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="indoor-lighting.html">Indoor Lighting</a></li>
+                <li><a href="outdoor-lighting.html">Outdoor Lighting</a></li>
+                <li><a href="smart-lighting.html">Smart Lighting</a></li>
+                <li>
+                  <a href="Commercial-Solutions.html">Commercial Solutions</a>
+                </li>
+                <li><a href="newarrivial.html">New Arrivals</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Customer Service</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter & Payment -->
+            <div class="col-lg-3 col-md-6">
+              <h5 class="fw-bold mb-4 text-warning">Stay Connected</h5>
+              <p class="mb-3">
+                Subscribe for exclusive offers and new arrivals
+              </p>
+              <form class="d-flex mb-4">
+                <input
+                  type="email"
+                  class="form-control me-2"
+                  placeholder="Your email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-warning" type="submit">Subscribe</button>
+              </form>
+              <div>
+                <p class="mb-2 small opacity-75">We accept:</p>
+                <div class="payment-icons d-flex gap-3">
+                  <i class="fab fa-cc-visa fa-2x"></i>
+                  <i class="fab fa-cc-mastercard fa-2x"></i>
+                  <i class="fab fa-cc-amex fa-2x"></i>
+                  <i class="fab fa-cc-paypal fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="my-5 border-secondary opacity-25" />
+
+          <!-- Copyright -->
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0 small">
+                &copy; 2025 Gloriva Lighting. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-bottom-links small">
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Privacy Policy</a
+                >
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Terms of Service</a
+                >
+                <a href="#" class="text-light opacity-75">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Search toggle
+      $(".search-toggle").click(function (e) {
+        e.preventDefault();
+        $(".search-overlay").fadeIn();
+      });
+      $(".search-close").click(function () {
+        $(".search-overlay").fadeOut();
+      });
+
+      // Back to top button
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $("#back-to-top").fadeIn();
+        } else {
+          $("#back-to-top").fadeOut();
+        }
+      });
+      $("#back-to-top").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+        return false;
+      });
+
+      // Navbar scroll behavior
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $(".navbar").addClass("navbar-scrolled");
+        } else {
+          $(".navbar").removeClass("navbar-scrolled");
+        }
+      });
+
+      // Dark mode toggle
+      $("#dark-mode-toggle").click(function (e) {
+        e.preventDefault();
+        $("body").toggleClass("dark-mode");
+        if ($("body").hasClass("dark-mode")) {
+          $(this).html('<i class="fas fa-sun"></i> Light Mode');
+        } else {
+          $(this).html('<i class="fas fa-moon"></i> Dark Mode');
+        }
+      });
+
+      // Product quick view
+      $(".quick-view").click(function (e) {
+        e.preventDefault();
+        // Quick view functionality here
+        alert("Quick view functionality will be implemented here");
+      });
+    </script>
+  </body>
+</html>
