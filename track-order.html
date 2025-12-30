@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -727,3 +728,734 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Order - Gloriva Lighting</title>
+    <meta
+      name="description"
+      content="Track your premium Gloriva Lighting order in real-time. View detailed status, estimated delivery, and order summary."
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+      :root {
+        --primary: #4a6fdc;
+        --secondary: #d4af37;
+        --secondary-glow: rgba(212, 175, 55, 0.3);
+        --dark: #0f0f0f;
+        --light: #fafafa;
+        --gray: #666666;
+        --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.18);
+        --radius: 24px;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        padding-top: 170px;
+        transition: var(--transition);
+      }
+
+      /* Hero Header */
+      .track-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+          url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 160px 0 100px;
+        text-align: center;
+      }
+
+      .track-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+      }
+
+      .track-hero .lead {
+        font-size: 1.4rem;
+        max-width: 800px;
+        margin: 20px auto;
+        opacity: 0.95;
+        color: #fff;
+      }
+
+      /* Tracking Form Card */
+      .tracking-card {
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        padding: 60px;
+        max-width: 800px;
+        margin: -120px auto 80px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .tracking-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+      }
+
+      .form-floating > label {
+        color: var(--gray);
+      }
+
+      .form-floating > .form-control {
+        height: 70px;
+        border-radius: 50px;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        border: 2px solid #e0e0e0;
+        transition: var(--transition);
+      }
+
+      .form-floating > .form-control:focus {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.2);
+      }
+
+      .track-btn {
+        height: 70px;
+        border-radius: 50px;
+        padding: 0 60px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        background: var(--secondary);
+        border: none;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .track-btn:hover {
+        background: #e8c567;
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+      }
+
+      /* Status Timeline */
+      .status-timeline {
+        position: relative;
+        padding: 60px 0;
+      }
+
+      .status-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--secondary), #eee);
+        border-radius: 3px;
+        transform: translateX(-50%);
+      }
+
+      .status-step {
+        position: relative;
+        margin: 80px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .status-step:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+
+      .status-content {
+        width: 45%;
+        background: white;
+        padding: 40px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        position: relative;
+      }
+
+      .status-step:nth-child(odd) .status-content {
+        margin-left: 80px;
+      }
+
+      .status-step:nth-child(even) .status-content {
+        margin-right: 80px;
+      }
+
+      .status-icon {
+        width: 90px;
+        height: 90px;
+        background: white;
+        border: 6px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: #ddd;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      .status-step.completed .status-icon {
+        border-color: var(--secondary);
+        background: var(--secondary);
+        color: #212529;
+      }
+
+      .status-step.current .status-icon {
+        border-color: var(--secondary);
+        background: white;
+        color: var(--secondary);
+        box-shadow: 0 0 0 12px var(--secondary-glow);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 12px var(--secondary-glow);
+        }
+        70% {
+          box-shadow: 0 0 0 20px transparent;
+        }
+        100% {
+          box-shadow: 0 0 0 12px var(--secondary-glow);
+        }
+      }
+
+      .status-step h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+      }
+
+      .status-date {
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      /* Order Summary Card */
+      .order-card {
+        background: white;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .order-card-header {
+        background: var(--dark);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .order-card-header h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+      }
+
+      .order-card-body {
+        padding: 50px;
+      }
+
+      .order-item {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .order-item:last-child {
+        border-bottom: none;
+      }
+
+      .order-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-right: 30px;
+      }
+
+      .order-item-details h5 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+
+      .order-total-row {
+        font-size: 1.4rem;
+        padding: 20px 0;
+        border-top: 2px solid #eee;
+      }
+
+      .final-total {
+        font-size: 2rem;
+        color: var(--secondary);
+      }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background: var(--dark);
+        color: #f0f0f0;
+      }
+
+      body.dark-mode .tracking-card,
+      body.dark-mode .status-content,
+      body.dark-mode .order-card {
+        background: #1a1a1a;
+      }
+
+      body.dark-mode .order-item {
+        border-color: #333;
+      }
+
+      @media (max-width: 992px) {
+        body {
+          padding-top: 120px;
+        }
+        .track-hero h1 {
+          font-size: 3.5rem;
+        }
+        .tracking-card {
+          padding: 40px;
+          margin: -80px auto 60px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .status-timeline::before {
+          left: 45px;
+        }
+        .status-step {
+          flex-direction: column;
+          margin: 100px 0;
+        }
+        .status-step:nth-child(odd) {
+          flex-direction: column;
+        }
+        .status-content {
+          width: 90%;
+          margin: 0 0 0 90px !important;
+          text-align: left !important;
+        }
+        .status-icon {
+          left: 45px;
+          transform: none;
+        }
+        .order-item {
+          flex-direction: column;
+          text-align: center;
+        }
+        .order-item img {
+          margin: 0 0 20px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar py-3 d-none d-lg-block border-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-start">
+            <span class="me-4"
+              ><i class="fas fa-phone-alt me-2"></i>(123) 456-7890</span
+            >
+            <span
+              ><i class="fas fa-envelope me-2"></i
+              >info@glorivalighting.com</span
+            >
+          </div>
+          <div class="col-md-6 text-end">
+            <a
+              href="track-order.html"
+              class="me-3 text-decoration-none text-muted"
+            >
+              <i class="fas fa-truck me-1"></i>Track Order
+            </a>
+            <a
+              href="store-locator.html"
+              class="me-3 text-decoration-none text-muted"
+            >
+              <i class="fas fa-map-marker-alt me-1"></i>Find Store
+            </a>
+            <a
+              href="#"
+              id="dark-mode-toggle"
+              class="text-decoration-none text-muted"
+            >
+              <i class="fas fa-moon me-1"></i>Dark Mode
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="track-hero">
+      <div class="container">
+        <h1>Track Your Order</h1>
+        <p class="lead">
+          Experience peace of mind with real-time updates on your premium
+          lighting delivery
+        </p>
+      </div>
+    </header>
+
+    <!-- Tracking Form -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="tracking-card" data-aos="fade-up">
+          <h2 class="text-center mb-5">Find Your Order</h2>
+          <form id="trackForm" class="row g-4">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="orderNumber"
+                  placeholder="Order Number"
+                  required
+                />
+                <label for="orderNumber">Order Number</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email Address"
+                  required
+                />
+                <label for="email">Email Address</label>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="track-btn btn btn-warning">
+                <i class="fas fa-search me-2"></i>Track Order
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Status Timeline -->
+    <section
+      class="status-timeline bg-light py-5"
+      id="orderStatus"
+      style="display: none"
+    >
+      <div class="container">
+        <h2 class="text-center mb-5 display-5 fw-bold" data-aos="fade-up">
+          Delivery Progress
+        </h2>
+
+        <div class="status-step completed" data-aos="fade-right">
+          <div class="status-content">
+            <h4>Order Confirmed</h4>
+            <p class="status-date">December 28, 2025 • 2:30 PM</p>
+            <p>
+              Your order has been successfully placed and payment confirmed.
+              We're preparing your premium items.
+            </p>
+          </div>
+          <div class="status-icon"><i class="fas fa-check"></i></div>
+        </div>
+
+        <div class="status-step completed" data-aos="fade-left">
+          <div class="status-content">
+            <h4>Processing & Packed</h4>
+            <p class="status-date">December 29, 2025 • 10:15 AM</p>
+            <p>
+              Your items have been carefully packed with protective materials
+              for safe transit.
+            </p>
+          </div>
+          <div class="status-icon"><i class="fas fa-box"></i></div>
+        </div>
+
+        <div class="status-step current" data-aos="fade-right">
+          <div class="status-content">
+            <h4>Out for Delivery</h4>
+            <p class="status-date">Today, December 30, 2025</p>
+            <p>
+              Your package is on its final journey! Expected delivery between
+              2:00 PM - 6:00 PM.
+            </p>
+            <a href="#" class="btn btn-outline-warning mt-3"
+              >Live Tracking Link</a
+            >
+          </div>
+          <div class="status-icon"><i class="fas fa-truck"></i></div>
+        </div>
+
+        <div class="status-step" data-aos="fade-left">
+          <div class="status-content">
+            <h4>Delivered</h4>
+            <p class="status-date">Expected Today</p>
+            <p>
+              Your premium Gloriva lighting will be delivered and installed with
+              care.
+            </p>
+          </div>
+          <div class="status-icon"><i class="fas fa-home"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Summary -->
+    <section class="py-5" id="orderSummary" style="display: none">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <div class="order-card">
+              <div class="order-card-header">
+                <h3>Order #GL-2025-12345</h3>
+                <p class="mb-0 mt-3 opacity-75">
+                  Placed on December 28, 2025 • Out for Delivery Today
+                </p>
+              </div>
+              <div class="order-card-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h4 class="fw-bold mb-4">Ordered Items</h4>
+                    <div class="order-item">
+                      <img src="pendant.light1.jpg" alt="Aurelia Pendant" />
+                      <div class="order-item-details">
+                        <h5>Aurelia Statement Pendant</h5>
+                        <p class="text-muted">
+                          Antique Gold Finish • Medium Size
+                        </p>
+                        <p class="fw-bold">₹24,999</p>
+                      </div>
+                    </div>
+                    <div class="order-item">
+                      <img src="smart-light1.jpg" alt="Nova Smart Bulb" />
+                      <div class="order-item-details">
+                        <h5>Nova Smart Bulb 4-Pack</h5>
+                        <p class="text-muted">
+                          RGB + Tunable White • WiFi Enabled
+                        </p>
+                        <p class="fw-bold">₹8,999</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h4 class="fw-bold mb-4">Payment Summary</h4>
+                    <div class="order-total-row d-flex justify-content-between">
+                      <span>Subtotal</span>
+                      <span>₹33,998</span>
+                    </div>
+                    <div class="order-total-row d-flex justify-content-between">
+                      <span>Shipping</span>
+                      <span class="text-success">Free</span>
+                    </div>
+                    <div class="order-total-row d-flex justify-content-between">
+                      <span>Tax</span>
+                      <span>₹2,720</span>
+                    </div>
+                    <div
+                      class="order-total-row d-flex justify-content-between align-items-center mt-4 pt-4 border-top"
+                    >
+                      <h4 class="mb-0">Total Paid</h4>
+                      <h3 class="final-total mb-0">₹36,718</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+      <footer class="bg-dark text-light py-5">
+        <div class="container">
+          <div class="row g-5">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+              <img
+                src="img/Gloriva Lighting.png"
+                alt="Gloriva Lighting Logo"
+                width="140"
+                class="mb-4"
+              />
+              <p class="mb-4">
+                Illuminating spaces with elegance and innovation since 2010.
+                Premium lighting solutions for every home and business.
+              </p>
+              <div class="social-icons d-flex gap-3">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-pinterest-p"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Shop</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="indoor-lighting.html">Indoor Lighting</a></li>
+                <li><a href="outdoor-lighting.html">Outdoor Lighting</a></li>
+                <li><a href="smart-lighting.html">Smart Lighting</a></li>
+                <li>
+                  <a href="Commercial-Solutions.html">Commercial Solutions</a>
+                </li>
+                <li><a href="newarrivial.html">New Arrivals</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <h5 class="fw-bold mb-4 text-warning">Customer Service</h5>
+              <ul class="list-unstyled footer-links">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter & Payment -->
+            <div class="col-lg-3 col-md-6">
+              <h5 class="fw-bold mb-4 text-warning">Stay Connected</h5>
+              <p class="mb-3">
+                Subscribe for exclusive offers and new arrivals
+              </p>
+              <form class="d-flex mb-4">
+                <input
+                  type="email"
+                  class="form-control me-2"
+                  placeholder="Your email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-warning" type="submit">Subscribe</button>
+              </form>
+              <div>
+                <p class="mb-2 small opacity-75">We accept:</p>
+                <div class="payment-icons d-flex gap-3">
+                  <i class="fab fa-cc-visa fa-2x"></i>
+                  <i class="fab fa-cc-mastercard fa-2x"></i>
+                  <i class="fab fa-cc-amex fa-2x"></i>
+                  <i class="fab fa-cc-paypal fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="my-5 border-secondary opacity-25" />
+
+          <!-- Copyright -->
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0 small">
+                &copy; 2025 Gloriva Lighting. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-bottom-links small">
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Privacy Policy</a
+                >
+                <a href="#" class="text-light opacity-75 me-3"
+                  >Terms of Service</a
+                >
+                <a href="#" class="text-light opacity-75">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1200, once: true });
+
+      // Simulate tracking
+      document
+        .getElementById("trackForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("orderStatus").style.display = "block";
+          document.getElementById("orderSummary").style.display = "block";
+          document.querySelector(".tracking-card").style.marginBottom = "100px";
+          window.scrollTo({
+            top: document.getElementById("orderStatus").offsetTop - 150,
+            behavior: "smooth",
+          });
+        });
+
+      // Dark Mode Toggle
+      document
+        .getElementById("dark-mode-toggle")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.body.classList.toggle("dark-mode");
+          const icon = this.querySelector("i");
+          icon.classList.toggle("fa-moon");
+          icon.classList.toggle("fa-sun");
+        });
+    </script>
+  </body>
+</html>
+>>>>>>> 0fb098d1662c908d11076dc63aa009c5184eb0ed
